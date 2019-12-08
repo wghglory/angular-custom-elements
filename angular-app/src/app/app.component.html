@@ -1,6 +1,12 @@
 <router-outlet></router-outlet>
 
-<input #input
-  value="Message">
-<button (click)="popupService.showAsComponent(input.value)">Show as component</button>
-<button (click)="popupService.showAsElement(input.value)">Show as element</button>
+<app-login (login)="onLogin($event)"
+  [username]="'derek'">
+</app-login>
+
+<div class="message">
+  <input #input
+    value="Message">
+  <button (click)="popupService.showAsComponent(input.value)">Show as component</button>
+  <button (click)="popupService.showAsElement(input.value)">Show as element</button>
+</div>

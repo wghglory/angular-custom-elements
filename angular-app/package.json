@@ -4,7 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "_build": "ng build",
+    "build": "ng build --prod --output-hashing=none",
+    "postbuild": "npm run package",
+    "_package": "cat dist/angular-app/{runtime-es2015,polyfills-es2015,main-es2015,scripts}.js | gzip > elements.js.gz",
+    "package": "cat dist/angular-app/{runtime-es2015,polyfills-es2015,main-es2015,scripts}.js > ../react-app/public/ng-elements/elements.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
