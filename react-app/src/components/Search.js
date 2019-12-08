@@ -27,7 +27,7 @@ export class SearchComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ margin: '2rem' }}>
         <input
           type="text"
           value={this.state.message}
