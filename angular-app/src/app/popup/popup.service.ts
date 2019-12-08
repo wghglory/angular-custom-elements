@@ -46,7 +46,10 @@ export class PopupService {
     ) as any;
 
     // Listen to the close event
-    popupEl.addEventListener('closed', () => document.body.removeChild(popupEl));
+    popupEl.addEventListener('closed', () => {
+      console.log('closed gets called');
+      popupEl.remove();
+    });
 
     // Set the message
     popupEl.message = message;
